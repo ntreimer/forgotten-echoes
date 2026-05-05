@@ -18,11 +18,13 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
+		$AnimatedSprite2D.play("run")
 		# Flip sprite
 		$AnimatedSprite2D.flip_h = direction < 0
 	else:
 		# move_toward adds friction; stop gradually
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		$AnimatedSprite2D.play("idle")
 
 	# Handles character movement and collisions
 	move_and_slide()
