@@ -15,6 +15,12 @@ run/main_scene="res://Levels/Level-01/level_01.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*res://Core/SignalBus.gd"
+GameManager="*res://Core/GameManager.gd"
+GlobalSettings="*res://Core/GlobalSettings.gd"
+
 [display]
 
 window/size/viewport_width=640
