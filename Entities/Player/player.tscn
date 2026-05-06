@@ -329,3 +329,8 @@ script = ExtResource("9_x1y6q")
 
 [node name="Hover" type="Node" parent="StateMachine"]
 script = ExtResource("11_ap3xn")
+
+[node name="Timer" type="Timer" parent="StateMachine/Hover"]
+one_shot = true
+
+[connection signal="timeout" from="StateMachine/Hover/Timer" to="StateMachine/Hover" method="_on_timer_timeout"]

@@ -13,5 +13,9 @@ func physics_update(delta):
 	
 	player.move_and_slide()
 	
+	if Input.is_action_just_pressed("jump"):
+		state_machine.transition_to("hover")
+		return
+	
 	if player.is_on_floor():
 		state_machine.transition_to("idle")

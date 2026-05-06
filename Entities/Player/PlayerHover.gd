@@ -1,16 +1,24 @@
 extends State
 
+@onready var timer = $Timer
 
 # Called when the node enters the scene tree for the first time.
-func enter() -> void:
+func enter():
 	player.velocity = Vector2.ZERO
-	await get_tree().create_timer(1).timeout
-	print("I finished my 3 sec counter!")
+	timer.start(1)
+
+	# Safety net for unconnected signal
+	#if not timer.timeout.is_connected(_on_timer_timeout()):
+		#timer.timeout.connect(_on_timer_timeout())	
 	
-	if state_machine.current_state == self:
-		state_machine.transition_to("fall")
+		
+func _on_timer_timeout():
+	print("inside timeout func")
+	state_machine.transition_to("fall")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func physics_update(delta):
 	player.move_and_slide()
-	print("calling hover physics update")
+
+func exit():
+	timer.stop()
