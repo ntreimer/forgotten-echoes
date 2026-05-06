@@ -13,8 +13,9 @@ func _ready() -> void:
 			child.player = owner # Fetches the root Player node
 			
 	if initial_state:
-		initial_state.enter()
 		current_state = initial_state
+		initial_state.enter()
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,6 +29,7 @@ func _physics_process(delta: float) -> void:
 		
 func transition_to(target_state_name: String):
 	var new_state = states.get(target_state_name.to_lower())
+	print("transitioning from ", current_state.name, " to ", new_state)
 	if not new_state:
 		return
 		

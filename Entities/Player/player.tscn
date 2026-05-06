@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dkt4et42wpfxw"]
+[gd_scene load_steps=50 format=3 uid="uid://dkt4et42wpfxw"]
 
 [ext_resource type="Texture2D" uid="uid://b7hsxhcsfvt7d" path="res://Entities/Player/Veritas-Sprites/Idle.png" id="1_lu8i8"]
 [ext_resource type="Script" uid="uid://c8v51i2r3sbsl" path="res://Entities/Player/player-movement.gd" id="1_tekja"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://crfqvgolbrhlw" path="res://Entities/Player/PlayerRun.gd" id="7_lub02"]
 [ext_resource type="Script" uid="uid://bx6hynjkb72i8" path="res://Entities/Player/PlayerFall.gd" id="8_lub02"]
 [ext_resource type="Script" uid="uid://d3khg4x4w5uj0" path="res://Entities/Player/PlayerJump.gd" id="9_x1y6q"]
+[ext_resource type="Script" uid="uid://c5ftuwadiq755" path="res://Entities/Player/PlayerHover.gd" id="11_ap3xn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qv8uv"]
 atlas = ExtResource("3_x1y6q")
@@ -325,3 +326,6 @@ script = ExtResource("8_lub02")
 
 [node name="Jump" type="Node" parent="StateMachine"]
 script = ExtResource("9_x1y6q")
+
+[node name="Hover" type="Node" parent="StateMachine"]
+script = ExtResource("11_ap3xn")

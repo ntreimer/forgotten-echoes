@@ -13,6 +13,10 @@ func physics_update(delta):
 	if direction:
 		player.velocity.x = direction * player.SPEED
 		player.sprite.flip_h = direction < 0
+		
+	if Input.is_action_just_pressed("jump"):
+		state_machine.transition_to("hover")
+		return
 	
 	player.move_and_slide()
 	
