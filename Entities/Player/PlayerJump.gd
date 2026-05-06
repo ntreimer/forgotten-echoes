@@ -1,6 +1,6 @@
 extends State
 
-func enter():
+func enter(_params: Dictionary = {}):
 	# Runs once upon state transition
 	player.sprite.play("jump")
 	player.velocity.y = player.JUMP_VELOCITY

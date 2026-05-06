@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://cpjds3mqpe616"]
+[gd_scene load_steps=6 format=4 uid="uid://cpjds3mqpe616"]
 
 [ext_resource type="Texture2D" uid="uid://buepkr6hari0x" path="res://Assets/Tilesets/Forgotten Realms/Level 1/Tileset/Tileset.png" id="1_s613x"]
 [ext_resource type="PackedScene" uid="uid://dkt4et42wpfxw" path="res://Entities/Player/player.tscn" id="2_4s181"]
@@ -142,6 +142,9 @@ terrain_set_0/terrain_1/name = "Terrain 1"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_s613x")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s613x"]
+size = Vector2(1563, 232)
+
 [node name="Level_01" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -149,3 +152,11 @@ tile_map_data = PackedByteArray("AAD+/wEAAAAAAAAAAAD//wEAAAACAAAAAAAAAAEAAAABAAA
 tile_set = SubResource("TileSet_l0iv4")
 
 [node name="Player" parent="." instance=ExtResource("2_4s181")]
+
+[node name="DeathZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(238.5, 254)
+shape = SubResource("RectangleShape2D_s613x")
+
+[connection signal="body_entered" from="DeathZone" to="Player" method="_on_death_zone_body_entered"]

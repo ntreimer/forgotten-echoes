@@ -8,7 +8,7 @@ var state_machine: Node
 func _ready() -> void:
 	pass # Replace with function body.
 
-func enter():
+func enter(_params: Dictionary = {}):
 	pass
 
 func exit():

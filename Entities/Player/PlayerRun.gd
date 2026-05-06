@@ -6,6 +6,7 @@ func physics_update(_delta):
 		return
 	
 	var direction = Input.get_axis("move_left", "move_right")
+	print("direction is: ", direction)
 	
 	if direction:
 		player.velocity.x = direction * player.SPEED

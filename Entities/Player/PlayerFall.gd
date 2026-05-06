@@ -1,6 +1,6 @@
 extends State
 
-func enter():
+func enter(_params: Dictionary = {}):
 	player.sprite.play("fall")
 
 func physics_update(delta):
