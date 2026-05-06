@@ -13,7 +13,7 @@ func take_damage(amount: int):
 		die()
 
 func die():
-	queue_free() # Default death
+	queue_free() # Default deathI f
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
