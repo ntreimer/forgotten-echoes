@@ -18,7 +18,7 @@ func _on_timer_timeout():
 	state_machine.transition_to("fall")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func physics_update(delta):
+func physics_update(_delta):
 	player.move_and_slide()
 	#var direction = Input.get_axis("move_left", "move_right")
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")

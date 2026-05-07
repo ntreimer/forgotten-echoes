@@ -5,6 +5,15 @@ extends State
 var dash_timer: float = 0.0
 var dash_direction: Vector2 = Vector2.ZERO
 var dash_speed: float = 0.0
+var temp_image_scene = preload("res://Entities/Mechanics/Chain/Chain.tscn")
+
+func spawn_chain(spawn_position):
+	var instance = temp_image_scene.instantiate()
+	instance.position = spawn_position
+	add_child(instance)
+	await get_tree().create_timer(2.0).timeout
+	instance.queue_free()
+
 
 func enter(params: Dictionary = {}) -> void:
 	print("I am in Chain enter")
@@ -21,7 +30,7 @@ func physics_update(delta: float) -> void:
 	#print("I am in Chain physics")
 	player.velocity = dash_direction * dash_speed
 	player.move_and_slide()
-
+	spawn_chain(player.global_position)
 	# Countdown
 	dash_timer -= delta
 	if dash_timer <= 0:
