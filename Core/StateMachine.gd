@@ -15,8 +15,6 @@ func _ready() -> void:
 	if initial_state:
 		current_state = initial_state
 		initial_state.enter()
-		
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
