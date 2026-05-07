@@ -2,18 +2,20 @@ extends State
 
 @export var dash_distance: float = 50.0 # unit is pixels
 @export var dash_duration: float = 0.1 
+@onready var sfx_player = $ChainSFX
 var dash_timer: float = 0.0
 var dash_direction: Vector2 = Vector2.ZERO
 var dash_speed: float = 0.0
 var temp_image_scene = preload("res://Entities/Mechanics/Chain/Chain.tscn")
 
 func spawn_chain(spawn_position):
+	sfx_player.play()
 	var instance = temp_image_scene.instantiate()
 	instance.position = spawn_position
 	add_child(instance)
 	await get_tree().create_timer(2.0).timeout
 	instance.queue_free()
-
+	
 
 func enter(params: Dictionary = {}) -> void:
 	print("I am in Chain enter")

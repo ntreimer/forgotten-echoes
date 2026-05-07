@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dkt4et42wpfxw"]
+[gd_scene load_steps=52 format=3 uid="uid://dkt4et42wpfxw"]
 
 [ext_resource type="Texture2D" uid="uid://b7hsxhcsfvt7d" path="res://Entities/Player/Veritas-Sprites/Idle.png" id="1_lu8i8"]
 [ext_resource type="Script" uid="uid://c8v51i2r3sbsl" path="res://Entities/Player/player-movement.gd" id="1_tekja"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://d3khg4x4w5uj0" path="res://Entities/Player/PlayerJump.gd" id="9_x1y6q"]
 [ext_resource type="Script" uid="uid://c5ftuwadiq755" path="res://Entities/Player/PlayerHover.gd" id="11_ap3xn"]
 [ext_resource type="Script" uid="uid://d3o1ipmyrcpfi" path="res://Entities/Player/PlayerChain.gd" id="12_iplt1"]
+[ext_resource type="AudioStream" uid="uid://bjs6q4i7ov2wc" path="res://Assets/Audio/SFX/850010__banditysmig__long-chain-falling-on-hard-drive-and-fork-trap-laying-sound.wav" id="13_owvpp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qv8uv"]
 atlas = ExtResource("3_x1y6q")
@@ -334,5 +335,8 @@ one_shot = true
 
 [node name="Chain" type="Node" parent="StateMachine"]
 script = ExtResource("12_iplt1")
+
+[node name="ChainSFX" type="AudioStreamPlayer2D" parent="StateMachine/Chain"]
+stream = ExtResource("13_owvpp")
 
 [connection signal="timeout" from="StateMachine/Hover/Timer" to="StateMachine/Hover" method="_on_timer_timeout"]
