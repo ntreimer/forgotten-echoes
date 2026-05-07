@@ -15,16 +15,12 @@ func spawn_chain(spawn_position):
 	add_child(instance)
 	await get_tree().create_timer(2.0).timeout
 	instance.queue_free()
-	
 
 func enter(params: Dictionary = {}) -> void:
-	print("I am in Chain enter")
 	var dict_direction = params["input_direction"]
-	print("the direction is: ", dict_direction)
 	dash_direction = dict_direction.normalized()
 	dash_speed = dash_distance / dash_duration
 	dash_timer = dash_duration
-	
 	#player.sprite.play("chain")
 
 # Reminder: delta is the amount of time since previous frame, or last physics call

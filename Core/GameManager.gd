@@ -1,4 +1,6 @@
 extends Node
+# This script is accessible anywhere in the game because it's a Global Autoload
+
 
 var current_life: int = 3
 var is_game_paused: bool = false
