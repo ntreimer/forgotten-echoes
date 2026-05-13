@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://buepkr6hari0x" path="res://Assets/Tilesets/Forgotten Realms/Level 1/Tileset/Tileset.png" id="1_s613x"]
 [ext_resource type="PackedScene" uid="uid://dkt4et42wpfxw" path="res://Entities/Player/Player.tscn" id="2_4s181"]
 [ext_resource type="Texture2D" uid="uid://bghud8r5n3wv5" path="res://Assets/Tilesets/Forgotten Realms/Level 1/image.png" id="2_kdgqv"]
+[ext_resource type="PackedScene" uid="uid://b1u8r3y4oc2tq" path="res://Entities/Enemies/Mushroom/Mushroom.tscn" id="4_kdgqv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s613x"]
 texture = ExtResource("1_s613x")
@@ -159,11 +160,16 @@ scale = Vector2(4.30078, 1.625)
 texture = ExtResource("2_kdgqv")
 
 [node name="Player" parent="." unique_id=2077433301 instance=ExtResource("2_4s181")]
+collision_layer = 2
+collision_mask = 3
 
 [node name="DeathZone" type="Area2D" parent="." unique_id=929058172]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=436963911]
 position = Vector2(238.5, 254)
 shape = SubResource("RectangleShape2D_s613x")
+
+[node name="Mushroom" parent="." unique_id=2082556631 instance=ExtResource("4_kdgqv")]
+position = Vector2(130, 93)
 
 [connection signal="body_entered" from="DeathZone" to="Player" method="_on_death_zone_body_entered"]

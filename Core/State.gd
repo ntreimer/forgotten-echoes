@@ -1,9 +1,8 @@
 class_name State extends Node
 
-# Reference to the player and state machine
-var player: Player
-var state_machine: Node
-var enemy: BaseEnemy
+# Reference to the actor and state machine
+var actor: CharacterBody2D
+var state_machine: StateMachine
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

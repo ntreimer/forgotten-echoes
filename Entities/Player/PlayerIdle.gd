@@ -1,8 +1,11 @@
 extends State
 
+var player: Player:
+	get:
+		return actor as Player
 
 func physics_update(_delta):
-	if not player.is_on_floor():
+	if not actor.is_on_floor():
 		state_machine.transition_to("fall")
 		return
 	

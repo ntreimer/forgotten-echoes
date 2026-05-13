@@ -31,3 +31,4 @@ script = ExtResource("4_14aot")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1466098986]
 
 [node name="LOS_Ray" type="RayCast2D" parent="." unique_id=1736817463]
+collision_mask = 3

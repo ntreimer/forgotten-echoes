@@ -124,9 +124,11 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f32m6"]
 radius = 14.0
-height = 32.0
 
 [node name="Mushroom" unique_id=2082556631 instance=ExtResource("1_jh8k5")]
+
+[node name="VisionArea" parent="." index="0" unique_id=144228525]
+visible = false
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=2069660311]
 sprite_frames = SubResource("SpriteFrames_q6edo")
@@ -134,5 +136,11 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" parent="." index="2" unique_id=501636786]
-position = Vector2(0, 16)
+position = Vector2(0, 17)
 shape = SubResource("CapsuleShape2D_f32m6")
+
+[node name="Hurtbox" parent="." index="4" unique_id=1418103772]
+visible = false
+
+[node name="Hitbox" parent="." index="5" unique_id=1964813420]
+visible = false
