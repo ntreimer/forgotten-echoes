@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Forgotten Echoes"
 run/main_scene="res://Levels/Level-01/level_01.tscn"
-config/features=PackedStringArray("4.4", "Mobile")
+config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]

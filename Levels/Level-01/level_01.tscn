@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cpjds3mqpe616"]
+[gd_scene format=4 uid="uid://cpjds3mqpe616"]
 
 [ext_resource type="Texture2D" uid="uid://buepkr6hari0x" path="res://Assets/Tilesets/Forgotten Realms/Level 1/Tileset/Tileset.png" id="1_s613x"]
 [ext_resource type="PackedScene" uid="uid://dkt4et42wpfxw" path="res://Entities/Player/Player.tscn" id="2_4s181"]
@@ -146,23 +146,23 @@ sources/0 = SubResource("TileSetAtlasSource_s613x")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s613x"]
 size = Vector2(1563, 232)
 
-[node name="Level_01" type="Node2D"]
+[node name="Level_01" type="Node2D" unique_id=1355999460]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=561204268]
 tile_map_data = PackedByteArray("AAD+/wEAAAAAAAAAAAD//wEAAAACAAAAAAAAAAEAAAABAAAAAAABAAEAAAADAAAAAAABAAIAAAABAAIAAAAAAAIAAAABAAIAAAD//wIAAAACAAIAAAD+/wIAAAAAAAEAAAACAAIAAAADAAIAAAABAAQAAAABAAIAAAACAAQAAAABAAIAAAADAAQAAAABAAIAAAAEAAQAAAACAAIAAAAFAAQAAAADAAIAAAAFAAMAAAADAAEAAAAFAAIAAAADAAEAAAAFAAEAAAADAAAAAAA=")
 tile_set = SubResource("TileSet_l0iv4")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=243077750]
 z_index = -1
 position = Vector2(139, -43.9999)
 scale = Vector2(4.30078, 1.625)
 texture = ExtResource("2_kdgqv")
 
-[node name="Player" parent="." instance=ExtResource("2_4s181")]
+[node name="Player" parent="." unique_id=2077433301 instance=ExtResource("2_4s181")]
 
-[node name="DeathZone" type="Area2D" parent="."]
+[node name="DeathZone" type="Area2D" parent="." unique_id=929058172]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=436963911]
 position = Vector2(238.5, 254)
 shape = SubResource("RectangleShape2D_s613x")
 

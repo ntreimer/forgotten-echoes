@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b1u8r3y4oc2tq"]
+[gd_scene format=3 uid="uid://b1u8r3y4oc2tq"]
 
 [ext_resource type="PackedScene" uid="uid://dpquit12lop7r" path="res://Entities/Enemies/BaseEnemy.tscn" id="1_jh8k5"]
 [ext_resource type="Texture2D" uid="uid://ckv1ax5h8uvdy" path="res://Entities/Enemies/Mushroom/Mushroom without VFX/Mushroom-Idle.png" id="2_oy7b8"]
@@ -126,13 +126,13 @@ animations = [{
 radius = 14.0
 height = 32.0
 
-[node name="Mushroom" instance=ExtResource("1_jh8k5")]
+[node name="Mushroom" unique_id=2082556631 instance=ExtResource("1_jh8k5")]
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=2069660311]
 sprite_frames = SubResource("SpriteFrames_q6edo")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2" unique_id=501636786]
 position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_f32m6")
