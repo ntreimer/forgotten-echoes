@@ -1,7 +1,7 @@
 [gd_scene load_steps=52 format=3 uid="uid://dkt4et42wpfxw"]
 
 [ext_resource type="Texture2D" uid="uid://b7hsxhcsfvt7d" path="res://Entities/Player/Veritas-Sprites/Idle.png" id="1_lu8i8"]
-[ext_resource type="Script" uid="uid://c8v51i2r3sbsl" path="res://Entities/Player/player-movement.gd" id="1_tekja"]
+[ext_resource type="Script" uid="uid://c8v51i2r3sbsl" path="res://Entities/Player/PlayerMovement.gd" id="1_tekja"]
 [ext_resource type="Texture2D" uid="uid://cjp8pdvsxd54p" path="res://Entities/Player/Veritas-Sprites/Run.png" id="2_tekja"]
 [ext_resource type="Texture2D" uid="uid://bw8aqw1x14taw" path="res://Entities/Player/Veritas-Sprites/Walk.png" id="3_5c2io"]
 [ext_resource type="Texture2D" uid="uid://dpta0j4umihxp" path="res://Entities/Player/Veritas-Sprites/Jump.png" id="3_x1y6q"]

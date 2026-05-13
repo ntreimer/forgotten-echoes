@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpquit12lop7r"]
+
+[ext_resource type="Script" uid="uid://cergo10qrcs88" path="res://Core/Enemy.gd" id="1_mtkip"]
+[ext_resource type="Script" uid="uid://dft4on5i5f8m4" path="res://Core/StateMachine.gd" id="2_kt2ek"]
+[ext_resource type="Script" uid="uid://b7fexnl562cfy" path="res://Entities/Enemies/EnemyPatrol.gd" id="3_awwqv"]
+[ext_resource type="Script" uid="uid://douaxq8rr7gm4" path="res://Entities/Enemies/EnemyChase.gd" id="4_14aot"]
+
+[node name="BaseEnemy" type="CharacterBody2D"]
+script = ExtResource("1_mtkip")
+
+[node name="VisionArea" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_kt2ek")
+initial_state = NodePath("Patrol")
+
+[node name="Patrol" type="Node" parent="StateMachine"]
+script = ExtResource("3_awwqv")
+
+[node name="Chase" type="Node" parent="StateMachine"]
+script = ExtResource("4_14aot")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="LOS_Ray" type="RayCast2D" parent="."]

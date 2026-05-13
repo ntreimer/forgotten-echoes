@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://cpjds3mqpe616"]
 
 [ext_resource type="Texture2D" uid="uid://buepkr6hari0x" path="res://Assets/Tilesets/Forgotten Realms/Level 1/Tileset/Tileset.png" id="1_s613x"]
-[ext_resource type="PackedScene" uid="uid://dkt4et42wpfxw" path="res://Entities/Player/player.tscn" id="2_4s181"]
+[ext_resource type="PackedScene" uid="uid://dkt4et42wpfxw" path="res://Entities/Player/Player.tscn" id="2_4s181"]
 [ext_resource type="Texture2D" uid="uid://bghud8r5n3wv5" path="res://Assets/Tilesets/Forgotten Realms/Level 1/image.png" id="2_kdgqv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s613x"]
