@@ -1,7 +1,7 @@
-[gd_scene load_steps=52 format=3 uid="uid://dkt4et42wpfxw"]
+[gd_scene format=3 uid="uid://dkt4et42wpfxw"]
 
 [ext_resource type="Texture2D" uid="uid://b7hsxhcsfvt7d" path="res://Entities/Player/Veritas-Sprites/Idle.png" id="1_lu8i8"]
-[ext_resource type="Script" uid="uid://c8v51i2r3sbsl" path="res://Entities/Player/player-movement.gd" id="1_tekja"]
+[ext_resource type="Script" uid="uid://c8v51i2r3sbsl" path="res://Entities/Player/PlayerMovement.gd" id="1_tekja"]
 [ext_resource type="Texture2D" uid="uid://cjp8pdvsxd54p" path="res://Entities/Player/Veritas-Sprites/Run.png" id="2_tekja"]
 [ext_resource type="Texture2D" uid="uid://bw8aqw1x14taw" path="res://Entities/Player/Veritas-Sprites/Walk.png" id="3_5c2io"]
 [ext_resource type="Texture2D" uid="uid://dpta0j4umihxp" path="res://Entities/Player/Veritas-Sprites/Jump.png" id="3_x1y6q"]
@@ -296,46 +296,46 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gds62"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1762651428]
 script = ExtResource("1_tekja")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=756326207]
 sprite_frames = SubResource("SpriteFrames_rkx17")
 animation = &"fall"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1709170485]
 shape = SubResource("CapsuleShape2D_gds62")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=512815845]
 position_smoothing_enabled = true
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=1436527730 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_01a4e")
 initial_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=806724388]
 script = ExtResource("6_7a1se")
 
-[node name="Run" type="Node" parent="StateMachine"]
+[node name="Run" type="Node" parent="StateMachine" unique_id=2006216544]
 script = ExtResource("7_lub02")
 
-[node name="Fall" type="Node" parent="StateMachine"]
+[node name="Fall" type="Node" parent="StateMachine" unique_id=586677903]
 script = ExtResource("8_lub02")
 
-[node name="Jump" type="Node" parent="StateMachine"]
+[node name="Jump" type="Node" parent="StateMachine" unique_id=1231963079]
 script = ExtResource("9_x1y6q")
 
-[node name="Hover" type="Node" parent="StateMachine"]
+[node name="Hover" type="Node" parent="StateMachine" unique_id=484761928]
 script = ExtResource("11_ap3xn")
 
-[node name="Timer" type="Timer" parent="StateMachine/Hover"]
+[node name="Timer" type="Timer" parent="StateMachine/Hover" unique_id=1135636299]
 one_shot = true
 
-[node name="Chain" type="Node" parent="StateMachine"]
+[node name="Chain" type="Node" parent="StateMachine" unique_id=138141253]
 script = ExtResource("12_iplt1")
 
-[node name="ChainSFX" type="AudioStreamPlayer2D" parent="StateMachine/Chain"]
+[node name="ChainSFX" type="AudioStreamPlayer2D" parent="StateMachine/Chain" unique_id=1595449004]
 stream = ExtResource("13_owvpp")
 
 [connection signal="timeout" from="StateMachine/Hover/Timer" to="StateMachine/Hover" method="_on_timer_timeout"]

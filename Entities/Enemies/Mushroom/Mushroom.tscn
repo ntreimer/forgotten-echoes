@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://b1u8r3y4oc2tq"]
+
+[ext_resource type="PackedScene" uid="uid://dpquit12lop7r" path="res://Entities/Enemies/BaseEnemy.tscn" id="1_jh8k5"]
+[ext_resource type="Texture2D" uid="uid://ckv1ax5h8uvdy" path="res://Entities/Enemies/Mushroom/Mushroom without VFX/Mushroom-Idle.png" id="2_oy7b8"]
+[ext_resource type="Texture2D" uid="uid://b7awras7j1ljf" path="res://Entities/Enemies/Mushroom/Mushroom without VFX/Mushroom-Run.png" id="3_f32m6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f32m6"]
+atlas = ExtResource("2_oy7b8")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s31r2"]
+atlas = ExtResource("2_oy7b8")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuf5u"]
+atlas = ExtResource("2_oy7b8")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gytm"]
+atlas = ExtResource("2_oy7b8")
+region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjtew"]
+atlas = ExtResource("2_oy7b8")
+region = Rect2(320, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egkue"]
+atlas = ExtResource("2_oy7b8")
+region = Rect2(400, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpq3f"]
+atlas = ExtResource("2_oy7b8")
+region = Rect2(480, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6edo"]
+atlas = ExtResource("3_f32m6")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ux8hu"]
+atlas = ExtResource("3_f32m6")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq7wx"]
+atlas = ExtResource("3_f32m6")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y7jr"]
+atlas = ExtResource("3_f32m6")
+region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqgi7"]
+atlas = ExtResource("3_f32m6")
+region = Rect2(320, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mav2k"]
+atlas = ExtResource("3_f32m6")
+region = Rect2(400, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvdbp"]
+atlas = ExtResource("3_f32m6")
+region = Rect2(480, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aimcr"]
+atlas = ExtResource("3_f32m6")
+region = Rect2(560, 0, 80, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6edo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f32m6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s31r2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuf5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gytm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjtew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egkue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpq3f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6edo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ux8hu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq7wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y7jr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqgi7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mav2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvdbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aimcr")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f32m6"]
+radius = 14.0
+
+[node name="Mushroom" unique_id=2082556631 instance=ExtResource("1_jh8k5")]
+
+[node name="VisionArea" parent="." index="0" unique_id=144228525]
+visible = false
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=2069660311]
+sprite_frames = SubResource("SpriteFrames_q6edo")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=501636786]
+position = Vector2(0, 17)
+shape = SubResource("CapsuleShape2D_f32m6")
+
+[node name="Hurtbox" parent="." index="4" unique_id=1418103772]
+visible = false
+
+[node name="Hitbox" parent="." index="5" unique_id=1964813420]
+visible = false

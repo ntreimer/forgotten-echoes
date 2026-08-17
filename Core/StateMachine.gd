@@ -10,7 +10,7 @@ func _ready() -> void:
 		if child is State:
 			states[child.name.to_lower()] = child
 			child.state_machine = self
-			child.player = owner # Fetches the root Player node
+			child.actor = owner
 			
 	if initial_state:
 		current_state = initial_state

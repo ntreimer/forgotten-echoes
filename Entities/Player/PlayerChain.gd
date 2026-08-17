@@ -3,10 +3,15 @@ extends State
 @export var dash_distance: float = 50.0 # unit is pixels
 @export var dash_duration: float = 0.1 
 @onready var sfx_player = $ChainSFX
+
 var dash_timer: float = 0.0
 var dash_direction: Vector2 = Vector2.ZERO
 var dash_speed: float = 0.0
 var temp_image_scene = preload("res://Entities/Mechanics/Chain/Chain.tscn")
+
+var player: Player:
+	get:
+		return actor as Player
 
 func spawn_chain(spawn_position):
 	sfx_player.play()

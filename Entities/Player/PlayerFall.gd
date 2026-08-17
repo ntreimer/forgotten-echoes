@@ -1,5 +1,9 @@
 extends State
 
+var player: Player:
+	get:
+		return actor as Player
+
 func enter(_params: Dictionary = {}):
 	player.sprite.play("fall")
 
