@@ -10,6 +10,10 @@ func physics_update(_delta):
 	enemy.velocity.x = patrol_speed
 	enemy.move_and_slide()
 	
+	if not enemy.is_on_floor():
+		state_machine.transition_to("fall")
+		return
+	
 	if enemy.is_on_wall():
 		patrol_speed *= -1
 		#TODO flip sprite

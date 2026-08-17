@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dft4on5i5f8m4" path="res://Core/StateMachine.gd" id="2_kt2ek"]
 [ext_resource type="Script" uid="uid://b7fexnl562cfy" path="res://Entities/Enemies/EnemyPatrol.gd" id="3_awwqv"]
 [ext_resource type="Script" uid="uid://douaxq8rr7gm4" path="res://Entities/Enemies/EnemyChase.gd" id="4_14aot"]
+[ext_resource type="Script" uid="uid://do6egv0exfsl4" path="res://Entities/Enemies/EnemyFall.gd" id="5_14aot"]
 
 [node name="BaseEnemy" type="CharacterBody2D" unique_id=289517283]
 script = ExtResource("1_mtkip")
@@ -23,6 +24,9 @@ script = ExtResource("3_awwqv")
 
 [node name="Chase" type="Node" parent="StateMachine" unique_id=212410939]
 script = ExtResource("4_14aot")
+
+[node name="Fall" type="Node" parent="StateMachine" unique_id=318870438]
+script = ExtResource("5_14aot")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1418103772]
 
